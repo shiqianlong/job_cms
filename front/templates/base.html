@@ -1,0 +1,44 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+
+    {% endblock %}</title>
+
+</head>
+<body>
+<h1 style="margin: auto;width: 50%">子午科技开放职位</h1>
+
+{% block header %}
+    <a href="/" style="text-decoration: none; color:#007bff">首页</a>
+    <a href="{% url 'jobs:index' %}" style="text-decoration: none; color:#007bff">职位列表</a>
+
+    {% if user.is_authenticated %}
+        <a href="/accounts/logout" style="text-decoration: none; color:#007bff">退出</a>
+    {% else %}
+        <a href="/accounts/login" style="text-decoration: none; color:#007bff">登录</a>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <p>欢迎您！{{ user.username }}</p>
+    {% else %}
+        <br>欢迎您！期待您的加入，登录可以提交简历。<br>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

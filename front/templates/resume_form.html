@@ -1,0 +1,24 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<a href="/" style="text-decoration: none; color:#007bff">首页</a>
+<a href="{% url 'jobs:index' %}" style="text-decoration: none; color:#007bff">职位列表</a>
+
+
+<form method="post" method="post" class="form" enctype="multipart/form-data" style="width:600px;margin-left:5px">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            提交
+        </button>
+    {% endbuttons %}
+</form>
