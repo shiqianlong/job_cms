@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b1yqbn5d5cr=3pbuwkjo)5nv*a*q3lh3&6x913)#4j#!aar4^#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.19.38.44',]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -151,7 +151,7 @@ MEDIA_URL = '/media/'
 # STATICFILES_STORAGE = 'django_oss_storage.backends.OssStaticStorage'
 
 # 如果需要使用阿里云OSS存储那么就开启下面这个，否则就注释掉，那么就是用本地的存储
-DEFAULT_FILE_STORAGE = 'django_oss_storage.backends.OssMediaStorage'
+# DEFAULT_FILE_STORAGE = 'django_oss_storage.backends.OssMediaStorage'
 
 # AliCloud access key ID
 OSS_ACCESS_KEY_ID = 'xxxxxxxxxxxxxxxxxxxxxxxxxx'
